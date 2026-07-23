@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | KIXO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts: Big Shoulders (display) / Work Sans (body) / IBM Plex Mono (labels, prices) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@600;700;900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-stride sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="KIXO home">
+            </a>
+
+            <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="d-none d-lg-flex align-items-center ms-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="cart.html" class="btn btn-outline-dark btn-cart btn-sm ms-4">
+                    <i class="bi bi-bag me-1"></i> Cart
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end offcanvas-stride" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title display-font" id="mobileNavLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html"><i class="bi bi-bag me-2"></i>Cart</a></li>
+            </ul>
+            <hr class="border-secondary">
+            <div class="d-flex gap-3 fs-5">
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- main -->
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero diagonal-b" style="background-image:url('images/banner.jpg');">
+            <div class="container" style="min-height:560px;">
+                <div class="row align-items-center" style="min-height:560px;">
+                    <div class="col-lg-7">
+
+                        <p class="eyebrow mb-3">New Season &mdash; SS26 Collection</p>
+
+                        <h1 class="mb-4">Built For<br>Your Next<br>Stride</h1>
+                        <p class="lead mb-4" style="max-width:32rem; color:#C9CBC3;">
+                            Curated for quality, built for comfort. Discover top-tier brands and iconic styles crafted
+                            to keep you moving from your morning run to your weekend errands.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="products.html" class="btn btn-primary btn-lg">Shop Now <i
+                                    class="bi bi-arrow-right ms-1"></i></a>
+                            <a href="about.html" class="btn btn-outline-light btn-lg">Our Story</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="section-pad">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3">
+                    <div>
+                        <p class="eyebrow mb-2">Fresh Drops</p>
+                        <h2 class="mb-0">Featured Products</h2>
+                    </div>
+                    <a href="products.html" class="btn btn-outline-dark">View All <i
+                            class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-3 product-item">
+                        <div class="card h-100">
+                            <div class="position-relative">
+                                <img src="images/product-images/product-1.jpg" class="card-img-top"
+                                    alt="Aero Runner — Running shoe">
+                                <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <p class="eyebrow mb-1">Running</p>
+                                <h3 class="h5 mb-1">Aero Runner</h3>
+                                <p class="text-secondary small mb-3">Lightweight mesh trainer built for daily miles.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="price fw-semibold">₱3,499.00</span>
+                                    <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 product-item">
+                        <div class="card h-100">
+                            <div class="position-relative">
+                                <img src="images/product-images/product-3.jpg" class="card-img-top"
+                                    alt="Cloud Step — Lifestyle shoe">
+                                <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <p class="eyebrow mb-1">Lifestyle</p>
+                                <h3 class="h5 mb-1">Cloud Step</h3>
+                                <p class="text-secondary small mb-3">Everyday comfort with a soft knit upper.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="price fw-semibold">₱2,999.00</span>
+                                    <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 product-item">
+                        <div class="card h-100">
+                            <div class="position-relative">
+                                <img src="images/product-images/product-4.jpg" class="card-img-top"
+                                    alt="Court King — Basketball shoe">
+                                <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <p class="eyebrow mb-1">Basketball</p>
+                                <h3 class="h5 mb-1">Court King</h3>
+                                <p class="text-secondary small mb-3">High-top support built for explosive plays.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="price fw-semibold">₱4,299.00</span>
+                                    <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 product-item">
+                        <div class="card h-100">
+                            <div class="position-relative">
+                                <img src="images/product-images/product-7.jpg" class="card-img-top"
+                                    alt="Velocity Pro — Running shoe">
+                                <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <p class="eyebrow mb-1">Running</p>
+                                <h3 class="h5 mb-1">Velocity Pro</h3>
+                                <p class="text-secondary small mb-3">Carbon-plated speed built for race day.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="price fw-semibold">₱4,499.00</span>
+                                    <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="section-pad bg-white">
+            <div class="container">
+                <p class="eyebrow mb-2">Shop By Category</p>
+                <h2 class="mb-5">Find Your Fit</h2>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="products.html" class="text-decoration-none">
+                            <div class="category-card">
+                                <img src="images/categories/category-running.jpg" alt="Running shoes">
+                                <div class="category-label"><span>Running</span></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="products.html" class="text-decoration-none">
+                            <div class="category-card">
+                                <img src="images/categories/category-basketball.jpg" alt="Basketball shoes">
+                                <div class="category-label"><span>Basketball</span></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="products.html" class="text-decoration-none">
+                            <div class="category-card">
+                                <img src="images/categories/category-lifestyle.jpg" alt="Lifestyle shoes">
+                                <div class="category-label"><span>Lifestyle</span></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="products.html" class="text-decoration-none">
+                            <div class="category-card">
+                                <img src="images/categories/category-training.jpg" alt="Training shoes">
+                                <div class="category-label"><span>Training</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Banner -->
+        <section class="promo-banner diagonal-t py-5" style="background-image:url('images/promo-banner.jpg');">
+            <div class="container text-center py-5">
+                <p class="eyebrow mb-2" style="color:#B9E8DC;">Limited Time</p>
+                <h2 class="display-5 mb-3">Summer Sale &mdash; 20% Off Running Shoes</h2>
+                <p class="lead mb-4">Use code <span class="mono fw-bold">KIXO20</span> at checkout. Ends July 31.</p>
+                <a href="products.html" class="btn btn-primary btn-lg">Shop The Sale</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-stride py-5 mt-auto">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <img src="images/logo.png" class="footer-brand mb-3" alt="KIXO">
+                    <p class="text-white-50">High quality top-tier brands and iconic styles crafted to keep you moving.
+                    </p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <p class="eyebrow mb-3">Shop</p>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="products.html" class="text-decoration-none">All Shoes</a></li>
+                        <li><a href="products.html" class="text-decoration-none">Running</a></li>
+                        <li><a href="products.html" class="text-decoration-none">Basketball</a></li>
+                        <li><a href="products.html" class="text-decoration-none">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <p class="eyebrow mb-3">Company</p>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="contact.html" class="text-decoration-none">Contact</a></li>
+                        <li><a href="cart.html" class="text-decoration-none">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <p class="eyebrow mb-3">Newsletter</p>
+                    <p class="text-white-50 small">Get new drops and restocks in your inbox.</p>
+                    <form class="d-flex gap-2" onsubmit="return false;">
+                        <label for="newsletterEmail" class="visually-hidden">Email address</label>
+                        <input type="email" id="newsletterEmail" class="form-control form-control-sm"
+                            placeholder="you@email.com">
+                        <button class="btn btn-primary btn-sm text-nowrap">Join</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex flex-column flex-md-row justify-content-between small text-white-50 gap-2">
+                <p class="mb-0">&copy; 2026 KIXO Footwear. All rights reserved.</p>
+                <p class="mb-0">Cavite State University Tanza Campus, Tanza, Cavite</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
