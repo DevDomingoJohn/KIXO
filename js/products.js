@@ -42,4 +42,19 @@ document.addEventListener("DOMContentLoaded", function () {
       applyFilters();
     });
   });
+
+  // Pre-select category if one was passed in the URL (e.g. from the homepage "Find Your Fit" links)
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryFromUrl = urlParams.get('category');
+
+  if (categoryFromUrl) {
+    const matchingBtn = document.querySelector(`[data-filter-category="${categoryFromUrl}"]`);
+    if (matchingBtn) {
+      categoryButtons.forEach(b => b.classList.remove('active'));
+      matchingBtn.classList.add('active');
+      activeCategory = categoryFromUrl;
+    }
+  }
+
+  applyFilters();
 });

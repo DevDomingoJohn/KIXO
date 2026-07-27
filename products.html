@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="d-flex flex-column min-vh-100">
 
   <!-- Navbar -->
@@ -23,7 +25,7 @@
       </a>
 
       <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Toggle navigation">
+        data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -36,6 +38,7 @@
         </ul>
         <a href="cart.html" class="btn btn-outline-dark btn-cart btn-sm ms-4">
           <i class="bi bi-bag me-1"></i> Cart
+          <span id="navCartCount" class="cart-count-badge"></span>
         </a>
       </div>
     </div>
@@ -64,657 +67,687 @@
   </div>
 
   <!-- Main content -->
-    <main class="section-pad">
-  <div class="container">
+  <main class="section-pad">
+    <div class="container">
 
-    <!-- Page header + filters -->
-    <div class="d-flex flex-column gap-3 mb-4">
+      <!-- Page header + filters -->
+      <div class="d-flex flex-column gap-3 mb-4">
 
-      <div>
-        <p class="eyebrow mb-2">All Products</p>
-        <h1 class="mb-0">Shop KIXO Footwear</h1>
-        <p class="text-secondary small mt-2">
-          Filter by sport category and brand for a more accurate shoe search.
-        </p>
-      </div>
-
-      <!-- Category filters -->
-      <div class="d-flex flex-wrap gap-2">
-        <span class="small text-secondary me-2">Category:</span>
-        <button class="btn btn-outline-dark btn-sm active" data-filter-category="all">All</button>
-        <button class="btn btn-outline-dark btn-sm" data-filter-category="running">Running</button>
-        <button class="btn btn-outline-dark btn-sm" data-filter-category="basketball">Basketball</button>
-        <button class="btn btn-outline-dark btn-sm" data-filter-category="lifestyle">Lifestyle</button>
-        <button class="btn btn-outline-dark btn-sm" data-filter-category="training">Training</button>
-      </div>
-
-      <!-- Brand filters  -->
-      <div class="d-flex flex-wrap gap-2">
-        <span class="small text-secondary me-2">Brand:</span>
-        <button class="btn btn-outline-dark btn-sm active" data-filter-brand="all">All Brands</button>
-        <button class="btn btn-outline-dark btn-sm" data-filter-brand="nike">Nike</button>
-        <button class="btn btn-outline-dark btn-sm" data-filter-brand="adidas">Adidas</button>
-        <button class="btn btn-outline-dark btn-sm" data-filter-brand="anta">Anta</button>
-        <button class="btn btn-outline-dark btn-sm" data-filter-brand="puma">Puma</button>
-      </div>
-
-    </div>
-       <!-- Product grid -->
-<div class="row g-4" id="productGrid">
-
-  <!-- NIKE -->
-  <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="nike">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/nike1.png" class="card-img-top" alt="Nike — Running shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">Highly Rated</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Running · Nike</p>
-        <h3 class="h5 mb-1">Nike PEGASUS 41</h3>
-        <p class="text-secondary small mb-3">Dual-layer responsive cushioning for an energised and comfortable ride.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱7,395</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-3 mono small">
+              <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Shop</li>
+            </ol>
+          </nav>
+          <p class="eyebrow mb-2">All Products</p>
+          <h1 class="mb-0">Shop KIXO Footwear</h1>
+          <p class="text-secondary small mt-2">
+            Filter by sport category and brand for a more accurate shoe search.
+          </p>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="nike">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/nike2.png" class="card-img-top" alt="Nike — Running shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">Highly Rated</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Running · Nike</p>
-        <h3 class="h5 mb-1">nike vomero 18</h3>
-        <p class="text-secondary small mb-3">Maximum cushioning in the Vomero provides a comfortable ride for everyday runs.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱8,395</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <!-- Category filters -->
+        <div class="d-flex flex-wrap gap-2">
+          <span class="small text-secondary me-2">Category:</span>
+          <button class="btn btn-outline-dark btn-sm active" data-filter-category="all">All</button>
+          <button class="btn btn-outline-dark btn-sm" data-filter-category="running">Running</button>
+          <button class="btn btn-outline-dark btn-sm" data-filter-category="basketball">Basketball</button>
+          <button class="btn btn-outline-dark btn-sm" data-filter-category="lifestyle">Lifestyle</button>
+          <button class="btn btn-outline-dark btn-sm" data-filter-category="training">Training</button>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="nike">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/nike3.png" class="card-img-top" alt="Nike — Basketball shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Basketball · Nike</p>
-        <h3 class="h5 mb-1">LeBron XXIII 'Dreams and Nightmares' EP</h3>
-        <p class="text-secondary small mb-3">It offers peak lightweight responsiveness thanks to springy, full-length ZoomX 
-          foam—perfect for the high speed demands of the modern game.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱12,595</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <!-- Brand filters  -->
+        <div class="d-flex flex-wrap gap-2">
+          <span class="small text-secondary me-2">Brand:</span>
+          <button class="btn btn-outline-dark btn-sm active" data-filter-brand="all">All Brands</button>
+          <button class="btn btn-outline-dark btn-sm" data-filter-brand="nike">Nike</button>
+          <button class="btn btn-outline-dark btn-sm" data-filter-brand="adidas">Adidas</button>
+          <button class="btn btn-outline-dark btn-sm" data-filter-brand="anta">Anta</button>
+          <button class="btn btn-outline-dark btn-sm" data-filter-brand="puma">Puma</button>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="nike">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/nike4.png" class="card-img-top" alt="Nike — Basketball shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
       </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Basketball · Nike</p>
-        <h3 class="h5 mb-1">KD16 NRG EP</h3>
-        <p class="text-secondary small mb-3">It's ideal for the hoopaholic who can't say no to just one more game.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱8,895</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+      <!-- Product grid -->
+      <div class="row g-4" id="productGrid">
+
+        <!-- NIKE -->
+        <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="nike">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/nike1.png" class="card-img-top" alt="Nike — Running shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">Highly Rated</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Running · Nike</p>
+              <h3 class="h5 mb-1">Nike PEGASUS 41</h3>
+              <p class="text-secondary small mb-3">Dual-layer responsive cushioning for an energised and comfortable
+                ride.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱7,395</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="nike">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/nike7.png" class="card-img-top" alt="Nike— Lifestyle shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">30% off</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Lifestyle · Nike</p>
-        <h3 class="h5 mb-1">Nike Air Force 1 '07 Premium+</h3>
-        <p class="text-secondary small mb-3">Comfortable, durable and timeless – it's number one for a reason. The classic 
-          '80s construction pairs with monochromatic style and design details for a standout take on the AF1.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱5,317</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="nike">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/nike2.png" class="card-img-top" alt="Nike — Running shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">Highly Rated</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Running · Nike</p>
+              <h3 class="h5 mb-1">nike vomero 18</h3>
+              <p class="text-secondary small mb-3">Maximum cushioning in the Vomero provides a comfortable ride for
+                everyday runs.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱8,395</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="nike">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/nike8.png" class="card-img-top" alt="Nike— Lifestyle shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">Highly Rated</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Lifestyle · Nike</p>
-        <h3 class="h5 mb-1">Nike SB Zoom Blazer Mid</h3>
-        <p class="text-secondary small mb-3">The Blazer Mid is an iconic hoops shoe tailored to the needs of the modern skateboarder. 
-          Durable leather is paired with tacky rubber for flexible grip and comfort that lasts.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱5,495</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="nike">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/nike3.png" class="card-img-top" alt="Nike — Basketball shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Basketball · Nike</p>
+              <h3 class="h5 mb-1">LeBron XXIII 'Dreams and Nightmares' EP</h3>
+              <p class="text-secondary small mb-3">It offers peak lightweight responsiveness thanks to springy,
+                full-length ZoomX
+                foam—perfect for the high speed demands of the modern game.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱12,595</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="nike">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/nike6.png" class="card-img-top" alt="Nike — Training shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Training · Nike</p>
-        <h3 class="h5 mb-1">Nike MC Trainer 4</h3>
-        <p class="text-secondary small mb-3">A lightweight and breathable mesh upper pairs with lockdown support and 
-          flexible outsole for all-around comfort through every movement.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱4,495</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="nike">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/nike4.png" class="card-img-top" alt="Nike — Basketball shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Basketball · Nike</p>
+              <h3 class="h5 mb-1">KD16 NRG EP</h3>
+              <p class="text-secondary small mb-3">It's ideal for the hoopaholic who can't say no to just one more game.
+              </p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱8,895</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="nike">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/nike5.png" class="card-img-top" alt="Nike — Training shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Highly Rated</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Training · Nike</p>
-        <h3 class="h5 mb-1">Nike Metcon 10</h3>
-        <p class="text-secondary small mb-3">It optimises stability for your heavier lifts with an ultra-strong Hyperlift 
-          plate and levels up mobility with responsive ReactX foam.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱8,595</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="nike">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/nike7.png" class="card-img-top" alt="Nike— Lifestyle shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">30% off</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Lifestyle · Nike</p>
+              <h3 class="h5 mb-1">Nike Air Force 1 '07 Premium+</h3>
+              <p class="text-secondary small mb-3">Comfortable, durable and timeless – it's number one for a reason. The
+                classic
+                '80s construction pairs with monochromatic style and design details for a standout take on the AF1.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱5,317</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- ADIDAS -->
-  <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="adidas">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/adidas1.png" class="card-img-top" alt="Adidas — Running shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Running · Adidas</p>
-        <h3 class="h5 mb-1">HYPERBOOST RUN Running Shoes</h3>
-        <p class="text-secondary small mb-3">A lightweight daily trainer, powered by Hyperboost Pro technology with a 
-          lower stack for closer control through easy runs to tempo runs.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱9,500</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="nike">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/nike8.png" class="card-img-top" alt="Nike— Lifestyle shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">Highly Rated</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Lifestyle · Nike</p>
+              <h3 class="h5 mb-1">Nike SB Zoom Blazer Mid</h3>
+              <p class="text-secondary small mb-3">The Blazer Mid is an iconic hoops shoe tailored to the needs of the
+                modern skateboarder.
+                Durable leather is paired with tacky rubber for flexible grip and comfort that lasts.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱5,495</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="adidas">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/adidas2.png" class="card-img-top" alt="Adidas— Running shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Running · Adidas</p>
-        <h3 class="h5 mb-1">Adizero Adios 9 Running Shoes</h3>
-        <p class="text-secondary small mb-3">CarThere are 13.1 miles between you and the finish line. 
-          Get there in record time in these adidas running shoes.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱7,500</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="nike">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/nike6.png" class="card-img-top" alt="Nike — Training shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Training · Nike</p>
+              <h3 class="h5 mb-1">Nike MC Trainer 4</h3>
+              <p class="text-secondary small mb-3">A lightweight and breathable mesh upper pairs with lockdown support
+                and
+                flexible outsole for all-around comfort through every movement.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱4,495</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="adidas">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/adidas3.png" class="card-img-top" alt="Adidas— Basketball shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Basketball · Adidas</p>
-        <h3 class="h5 mb-1">HARDEN VOLUME 10 Shoes</h3>
-        <p class="text-secondary small mb-3">Hit the hardwood in the Harden Volume 10 shoes, a bold statement in basketball footwear. 
-          Built for players who thrive on quick moves and dynamic play, these shoes are all about energy, comfort, and control.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱9,500</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="nike">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/nike5.png" class="card-img-top" alt="Nike — Training shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Highly Rated</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Training · Nike</p>
+              <h3 class="h5 mb-1">Nike Metcon 10</h3>
+              <p class="text-secondary small mb-3">It optimises stability for your heavier lifts with an ultra-strong
+                Hyperlift
+                plate and levels up mobility with responsive ReactX foam.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱8,595</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="adidas">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/adidas4.png" class="card-img-top" alt="Adidas — Basketball shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Basketball · Adidas</p>
-        <h3 class="h5 mb-1">DAME X Shoes</h3>
-        <p class="text-secondary small mb-3">The Dame X shoes are for those who prefer the blend of performance and style. 
-          Designed to help you dominate the game, these shoes are your go-to on the basketball court.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱5,500</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <!-- ADIDAS -->
+        <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="adidas">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/adidas1.png" class="card-img-top" alt="Adidas — Running shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Running · Adidas</p>
+              <h3 class="h5 mb-1">HYPERBOOST RUN Running Shoes</h3>
+              <p class="text-secondary small mb-3">A lightweight daily trainer, powered by Hyperboost Pro technology
+                with a
+                lower stack for closer control through easy runs to tempo runs.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱9,500</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="adidas">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/adidas5.png" class="card-img-top" alt="Adidas — Lifestyle shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">NEW</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Lifestyle · Adidas</p>
-        <h3 class="h5 mb-1">CLOT Superstar By Edison Chen Shoes</h3>
-        <p class="text-secondary small mb-3">The newest release from adidas Originals by Edison Chen.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱11,000</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="adidas">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/adidas2.png" class="card-img-top" alt="Adidas— Running shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Running · Adidas</p>
+              <h3 class="h5 mb-1">Adizero Adios 9 Running Shoes</h3>
+              <p class="text-secondary small mb-3">CarThere are 13.1 miles between you and the finish line.
+                Get there in record time in these adidas running shoes.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱7,500</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="adidas">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/adidas6.png" class="card-img-top" alt="Adidas — Lifestyle shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Lifestyle · Adidas</p>
-        <h3 class="h5 mb-1">STAN SMITH 80s SHOES</h3>
-        <p class="text-secondary small mb-3">The Stan Smith 80s Shoes pay homage to the original design, capturing 
-          the essence of classic adidas style. Crisp and minimalist, every detail has been curated to mirror the 
-          iconic look of the early Stan Smiths.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱8,000</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="adidas">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/adidas3.png" class="card-img-top" alt="Adidas— Basketball shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Basketball · Adidas</p>
+              <h3 class="h5 mb-1">HARDEN VOLUME 10 Shoes</h3>
+              <p class="text-secondary small mb-3">Hit the hardwood in the Harden Volume 10 shoes, a bold statement in
+                basketball footwear.
+                Built for players who thrive on quick moves and dynamic play, these shoes are all about energy, comfort,
+                and control.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱9,500</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="adidas">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/adidas6.png" class="card-img-top" alt="Adidas— Training shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Training · Adidas</p>
-        <h3 class="h5 mb-1">Adizero Dropset Pro Training Shoes</h3>
-        <p class="text-secondary small mb-3">Unleash your potential with the Adizero Dropset Pro Training Shoes, 
-          where speed meets stability. Inspired by pro athlete insights, these shoes are built to tackle both 
-          endurance runs and strength workouts.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱8,500</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="adidas">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/adidas4.png" class="card-img-top" alt="Adidas — Basketball shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Basketball · Adidas</p>
+              <h3 class="h5 mb-1">DAME X Shoes</h3>
+              <p class="text-secondary small mb-3">The Dame X shoes are for those who prefer the blend of performance
+                and style.
+                Designed to help you dominate the game, these shoes are your go-to on the basketball court.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱5,500</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="adidas">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/adidas8.png" class="card-img-top" alt="Adidas— Training shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Training · Adidas</p>
-        <h3 class="h5 mb-1">Adizero EVO SL Shoes</h3>
-        <p class="text-secondary small mb-3">Where innovation drives performance, the Adizero EVO SL shoes set the pace. 
-          Inspired by the record-breaking EVO 1, they’re crafted for runners who value versatility and performance in their gear.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱8,900</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="adidas">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/adidas5.png" class="card-img-top" alt="Adidas — Lifestyle shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">NEW</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Lifestyle · Adidas</p>
+              <h3 class="h5 mb-1">CLOT Superstar By Edison Chen Shoes</h3>
+              <p class="text-secondary small mb-3">The newest release from adidas Originals by Edison Chen.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱11,000</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- ANTA -->
-  <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="anta">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/anta1.png" class="card-img-top" alt="Anta  — Running shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Running · Anta</p>
-        <h3 class="h5 mb-1">ANTA Fold Running Shoes Men</h3>
-        <p class="text-secondary small mb-3">Lightweight mesh trainer built for daily miles.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱5,595</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="adidas">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/adidas6.png" class="card-img-top" alt="Adidas — Lifestyle shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Lifestyle · Adidas</p>
+              <h3 class="h5 mb-1">STAN SMITH 80s SHOES</h3>
+              <p class="text-secondary small mb-3">The Stan Smith 80s Shoes pay homage to the original design, capturing
+                the essence of classic adidas style. Crisp and minimalist, every detail has been curated to mirror the
+                iconic look of the early Stan Smiths.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱8,000</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="anta">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/anta2.png" class="card-img-top" alt="Anta — Running shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Running · Anta</p>
-        <h3 class="h5 mb-1">ANTA PG7 Journey Running Shoes Men</h3>
-        <p class="text-secondary small mb-3">Carbon-plated speed built for race day.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱3,995</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="adidas">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/adidas6.png" class="card-img-top" alt="Adidas— Training shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Training · Adidas</p>
+              <h3 class="h5 mb-1">Adizero Dropset Pro Training Shoes</h3>
+              <p class="text-secondary small mb-3">Unleash your potential with the Adizero Dropset Pro Training Shoes,
+                where speed meets stability. Inspired by pro athlete insights, these shoes are built to tackle both
+                endurance runs and strength workouts.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱8,500</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="anta">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/anta3.png" class="card-img-top" alt="Anta — Basketball shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Basketball · Anta</p>
-        <h3 class="h5 mb-1">ANTA Men Klay Thompson KT9 Basketball Shoes</h3>
-        <p class="text-secondary small mb-3">Trusted by professional athletes and sports enthusiasts alike, 
-          ANTA is the third largest sport group globally, with over 100 retail locations in the Philippines.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱7,500</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="adidas">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/adidas8.png" class="card-img-top" alt="Adidas— Training shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Training · Adidas</p>
+              <h3 class="h5 mb-1">Adizero EVO SL Shoes</h3>
+              <p class="text-secondary small mb-3">Where innovation drives performance, the Adizero EVO SL shoes set the
+                pace.
+                Inspired by the record-breaking EVO 1, they’re crafted for runners who value versatility and performance
+                in their gear.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱8,900</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="anta">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/anta4.png" class="card-img-top" alt="Anta  — Basketball shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Basketball · Anta</p>
-        <h3 class="h5 mb-1">ANTA Men Shock The Game Attack 6 Basketball Shoes</h3>
-        <p class="text-secondary small mb-3">Cushioned midsole built for street and court.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱3,800</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <!-- ANTA -->
+        <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="anta">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/anta1.png" class="card-img-top" alt="Anta  — Running shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Running · Anta</p>
+              <h3 class="h5 mb-1">ANTA Fold Running Shoes Men</h3>
+              <p class="text-secondary small mb-3">Lightweight mesh trainer built for daily miles.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱5,595</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="anta">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/anta5.png" class="card-img-top" alt="Anta— Lifestyle shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Lifestyle · Anta</p>
-        <h3 class="h5 mb-1">ANTA Basic Lifestyle Shoes Men</h3>
-        <p class="text-secondary small mb-3">Everyday comfort with a soft knit upper.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱2,395</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="anta">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/anta2.png" class="card-img-top" alt="Anta — Running shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Running · Anta</p>
+              <h3 class="h5 mb-1">ANTA PG7 Journey Running Shoes Men</h3>
+              <p class="text-secondary small mb-3">Carbon-plated speed built for race day.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱3,995</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="anta">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/anta6.png" class="card-img-top" alt="Anta — Lifestyle shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Lifestyle · Anta</p>
-        <h3 class="h5 mb-1">ANTA Women Retro Lifestyle Shoes</h3>
-        <p class="text-secondary small mb-3">Sleek low-top designed for city commutes.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱3,595</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="anta">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/anta3.png" class="card-img-top" alt="Anta — Basketball shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Basketball · Anta</p>
+              <h3 class="h5 mb-1">ANTA Men Klay Thompson KT9 Basketball Shoes</h3>
+              <p class="text-secondary small mb-3">Trusted by professional athletes and sports enthusiasts alike,
+                ANTA is the third largest sport group globally, with over 100 retail locations in the Philippines.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱7,500</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="anta">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/anta7.png" class="card-img-top" alt="Anta — Training shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Training · Anta</p>
-        <h3 class="h5 mb-1">ANTA Men Ebuffer Cross Training Shoes</h3>
-        <p class="text-secondary small mb-3">Stable base built for strength sessions.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱3,995</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="anta">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/anta4.png" class="card-img-top" alt="Anta  — Basketball shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Basketball · Anta</p>
+              <h3 class="h5 mb-1">ANTA Men Shock The Game Attack 6 Basketball Shoes</h3>
+              <p class="text-secondary small mb-3">Cushioned midsole built for street and court.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱3,800</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="anta">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/anta8.png" class="card-img-top" alt="Anta — Training shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Training · Anta</p>
-        <h3 class="h5 mb-1">ANTA Women Ebuffer Cross Training Shoes</h3>
-        <p class="text-secondary small mb-3">Versatile cross-trainer for gym and HIIT.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱2,995</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="anta">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/anta5.png" class="card-img-top" alt="Anta— Lifestyle shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Lifestyle · Anta</p>
+              <h3 class="h5 mb-1">ANTA Basic Lifestyle Shoes Men</h3>
+              <p class="text-secondary small mb-3">Everyday comfort with a soft knit upper.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱2,395</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- PUMA -->
-  <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="puma">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/puma1.png" class="card-img-top" alt="Puma — Running shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Running · Puma</p>
-        <h3 class="h5 mb-1">Velocity NITRO™ 5 Running Shoes Men</h3>
-        <p class="text-secondary small mb-3">Velocity NITRO™ 5 Running shoes deliver lightweight, responsive NITROFOAM™ 
-          cushioning on daily runs, no matter your pace or distance. Engineered mesh helps keep feet cool, and a 
-          PUMAGRIP outsole helps you push off with confidence.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱7,500.00</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="anta">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/anta6.png" class="card-img-top" alt="Anta — Lifestyle shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Lifestyle · Anta</p>
+              <h3 class="h5 mb-1">ANTA Women Retro Lifestyle Shoes</h3>
+              <p class="text-secondary small mb-3">Sleek low-top designed for city commutes.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱3,595</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="puma">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/puma2.png" class="card-img-top" alt="Puma— Running shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Running · Puma</p>
-        <h3 class="h5 mb-1">PUMA x HYROX Deviate NITRO™ 4 Shoes Men</h3>
-        <p class="text-secondary small mb-3">PUMA x HYROX delivers high-performance designs specifically curated for the ultimate fitness race. 
-          These shoes are built for stability, grip, and a snappy ride. 
-          Featuring NITROFOAM™ cushioning and a stable carbon fibre PWRPLATE, these shoes help you hold your speed through stations.
-        </p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱10,900.00</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="anta">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/anta7.png" class="card-img-top" alt="Anta — Training shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Training · Anta</p>
+              <h3 class="h5 mb-1">ANTA Men Ebuffer Cross Training Shoes</h3>
+              <p class="text-secondary small mb-3">Stable base built for strength sessions.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱3,995</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="puma">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/puma3.png" class="card-img-top" alt="Puma — Basketball shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Basketball · Puma</p>
-        <h3 class="h5 mb-1">Hali 1 Low Basketball Shoes Unisex</h3>
-        <p class="text-secondary small mb-3">The Hali 1 Low Basketball Shoes bring bounce and court-gripping traction to 
-          help quick cuts feel smooth and landings stay soft. 
-          A mesh overlay locks you in, and cushioning helps you keep pushing – right through the final buzzer.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱8,200.00</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="anta">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/anta8.png" class="card-img-top" alt="Anta — Training shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Training · Anta</p>
+              <h3 class="h5 mb-1">ANTA Women Ebuffer Cross Training Shoes</h3>
+              <p class="text-secondary small mb-3">Versatile cross-trainer for gym and HIIT.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱2,995</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="puma">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/puma4.png" class="card-img-top" alt="Puma — Basketball shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Basketball · Puma</p>
-        <h3 class="h5 mb-1">Court Pro 3 Mid Basketball Shoes Unisex</h3>
-        <p class="text-secondary small mb-3">The Court Pro 3 Mid Basketball shoes mix an airy upper with the lightweight 
-          cushioning of a PROFOAM midsole for on-court comfort. 
-          Anti-slip traction on the outsole helps provide stability on pivots, cuts, and drives to the rim.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱2,900.00</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <!-- PUMA -->
+        <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="puma">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/puma1.png" class="card-img-top" alt="Puma — Running shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Running · Puma</p>
+              <h3 class="h5 mb-1">Velocity NITRO™ 5 Running Shoes Men</h3>
+              <p class="text-secondary small mb-3">Velocity NITRO™ 5 Running shoes deliver lightweight, responsive
+                NITROFOAM™
+                cushioning on daily runs, no matter your pace or distance. Engineered mesh helps keep feet cool, and a
+                PUMAGRIP outsole helps you push off with confidence.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱7,500.00</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="puma">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/puma5.png" class="card-img-top" alt="Puma— Lifestyle shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Lifestyle · Puma</p>
-        <h3 class="h5 mb-1">Suede Classic Sneakers Unisex</h3>
-        <p class="text-secondary small mb-3">The Suede hit the scene in 1968 and has been changing the game ever since. 
-          It's been worn by icons of every generation, and it's stayed classic through it all.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱5,500.00</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="running" data-brand="puma">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/puma2.png" class="card-img-top" alt="Puma— Running shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Running · Puma</p>
+              <h3 class="h5 mb-1">PUMA x HYROX Deviate NITRO™ 4 Shoes Men</h3>
+              <p class="text-secondary small mb-3">PUMA x HYROX delivers high-performance designs specifically curated
+                for the ultimate fitness race.
+                These shoes are built for stability, grip, and a snappy ride.
+                Featuring NITROFOAM™ cushioning and a stable carbon fibre PWRPLATE, these shoes help you hold your speed
+                through stations.
+              </p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱10,900.00</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="puma">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/puma6.png" class="card-img-top" alt="Puma— Lifestyle shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Lifestyle · Puma</p>
-        <h3 class="h5 mb-1">PUMA x Monday Sleeping Club Speedcat Sneakers Unisex</h3>
-        <p class="text-secondary small mb-3">The PUMA Speedcat has been an icon of racing culture and street style for decades. 
-          The world first knew it as an ultra-slim driving shoe designed to shave milliseconds off lap times. 
-          Then it became a sleek streetwear staple seen on the streets of global fashion capitals.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱ 7,100.00</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="puma">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/puma3.png" class="card-img-top" alt="Puma — Basketball shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Basketball · Puma</p>
+              <h3 class="h5 mb-1">Hali 1 Low Basketball Shoes Unisex</h3>
+              <p class="text-secondary small mb-3">The Hali 1 Low Basketball Shoes bring bounce and court-gripping
+                traction to
+                help quick cuts feel smooth and landings stay soft.
+                A mesh overlay locks you in, and cushioning helps you keep pushing – right through the final buzzer.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱8,200.00</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="puma">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/puma7.png" class="card-img-top" alt="Puma — Training shoe">
-        <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Training · Puma</p>
-        <h3 class="h5 mb-1">Velocity NITRO™ 5 Running Shoes Men</h3>
-        <p class="text-secondary small mb-3">Velocity NITRO™ 5 Running shoes deliver lightweight, responsive NITROFOAM™ cushioning on daily runs, 
-          no matter your pace or distance. Engineered mesh helps keep feet cool, and a PUMAGRIP outsole helps you push off with confidence.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱7,500.00</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="basketball" data-brand="puma">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/puma4.png" class="card-img-top" alt="Puma — Basketball shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Basketball · Puma</p>
+              <h3 class="h5 mb-1">Court Pro 3 Mid Basketball Shoes Unisex</h3>
+              <p class="text-secondary small mb-3">The Court Pro 3 Mid Basketball shoes mix an airy upper with the
+                lightweight
+                cushioning of a PROFOAM midsole for on-court comfort.
+                Anti-slip traction on the outsole helps provide stability on pivots, cuts, and drives to the rim.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱2,900.00</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="puma">
-    <div class="card h-100">
-      <div class="position-relative">
-        <img src="images/product-images/puma8.png" class="card-img-top" alt="Puma — Training shoe">
-        <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="eyebrow mb-1">Training · Puma</p>
-        <h3 class="h5 mb-1">Deviate NITRO™ 3 Running Shoes Men</h3>
-        <p class="text-secondary small mb-3">Experience unparalleled propulsion in your everyday training runs with the Deviate NITRO™ 3, 
-          featuring PWRPLATE technology and NITRO™ foam. 
-          These highly responsive running shoes deliver a snappy ride, infusing speed into every stride.</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="price fw-semibold">₱5,280.00</span>
-          <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+        <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="puma">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/puma5.png" class="card-img-top" alt="Puma— Lifestyle shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Lifestyle · Puma</p>
+              <h3 class="h5 mb-1">Suede Classic Sneakers Unisex</h3>
+              <p class="text-secondary small mb-3">The Suede hit the scene in 1968 and has been changing the game ever
+                since.
+                It's been worn by icons of every generation, and it's stayed classic through it all.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱5,500.00</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="col-sm-6 col-lg-3 product-item" data-category="lifestyle" data-brand="puma">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/puma6.png" class="card-img-top" alt="Puma— Lifestyle shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Lifestyle · Puma</p>
+              <h3 class="h5 mb-1">PUMA x Monday Sleeping Club Speedcat Sneakers Unisex</h3>
+              <p class="text-secondary small mb-3">The PUMA Speedcat has been an icon of racing culture and street style
+                for decades.
+                The world first knew it as an ultra-slim driving shoe designed to shave milliseconds off lap times.
+                Then it became a sleek streetwear staple seen on the streets of global fashion capitals.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱ 7,100.00</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="puma">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/puma7.png" class="card-img-top" alt="Puma — Training shoe">
+              <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Training · Puma</p>
+              <h3 class="h5 mb-1">Velocity NITRO™ 5 Running Shoes Men</h3>
+              <p class="text-secondary small mb-3">Velocity NITRO™ 5 Running shoes deliver lightweight, responsive
+                NITROFOAM™ cushioning on daily runs,
+                no matter your pace or distance. Engineered mesh helps keep feet cool, and a PUMAGRIP outsole helps you
+                push off with confidence.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱7,500.00</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 product-item" data-category="training" data-brand="puma">
+          <div class="card h-100">
+            <div class="position-relative">
+              <img src="images/product-images/puma8.png" class="card-img-top" alt="Puma — Training shoe">
+              <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="eyebrow mb-1">Training · Puma</p>
+              <h3 class="h5 mb-1">Deviate NITRO™ 3 Running Shoes Men</h3>
+              <p class="text-secondary small mb-3">Experience unparalleled propulsion in your everyday training runs
+                with the Deviate NITRO™ 3,
+                featuring PWRPLATE technology and NITRO™ foam.
+                These highly responsive running shoes deliver a snappy ride, infusing speed into every stride.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="price fw-semibold">₱5,280.00</span>
+                <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-
-</div>
-  </div>
-</main>
+  </main>
 
   <footer class="footer-stride py-5 mt-auto">
     <div class="container">
@@ -752,8 +785,7 @@
           <p class="text-white-50 small">Get new drops and restocks in your inbox.</p>
           <form class="d-flex gap-2" onsubmit="return false;">
             <label for="newsletterEmail" class="visually-hidden">Email address</label>
-            <input type="email" id="newsletterEmail" class="form-control form-control-sm"
-                   placeholder="you@email.com">
+            <input type="email" id="newsletterEmail" class="form-control form-control-sm" placeholder="you@email.com">
             <button class="btn btn-primary btn-sm text-nowrap">Join</button>
           </form>
         </div>
@@ -765,9 +797,12 @@
       </div>
     </div>
   </footer>
-  
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/products.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/product-links.js"></script>
+  <script src="js/products.js"></script>
 </body>
+
 </html>

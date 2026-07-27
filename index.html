@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 page-home">
     <nav class="navbar navbar-expand-lg navbar-stride sticky-top py-3">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -41,6 +41,7 @@
                 </ul>
                 <a href="cart.html" class="btn btn-outline-dark btn-cart btn-sm ms-4">
                     <i class="bi bi-bag me-1"></i> Cart
+                    <span id="navCartCount" class="cart-count-badge"></span>
                 </a>
             </div>
         </div>
@@ -108,16 +109,20 @@
                     <div class="col-sm-6 col-lg-3 product-item">
                         <div class="card h-100">
                             <div class="position-relative">
-                                <img src="images/product-images/product-1.jpg" class="card-img-top"
-                                    alt="Aero Runner — Running shoe">
+                                <img src="images/product-images/puma1.png" class="card-img-top"
+                                    alt="Puma — Running shoe">
                                 <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
                             </div>
                             <div class="card-body d-flex flex-column">
-                                <p class="eyebrow mb-1">Running</p>
-                                <h3 class="h5 mb-1">Aero Runner</h3>
-                                <p class="text-secondary small mb-3">Lightweight mesh trainer built for daily miles.</p>
+                                <p class="eyebrow mb-1">Running · Puma</p>
+                                <h3 class="h5 mb-1">Velocity NITRO™ 5 Running Shoes Men</h3>
+                                <p class="text-secondary small mb-3">Velocity NITRO™ 5 Running shoes deliver
+                                    lightweight, responsive NITROFOAM™
+                                    cushioning on daily runs, no matter your pace or distance. Engineered mesh helps
+                                    keep feet cool, and a
+                                    PUMAGRIP outsole helps you push off with confidence.</p>
                                 <div class="mt-auto d-flex justify-content-between align-items-center">
-                                    <span class="price fw-semibold">₱3,499.00</span>
+                                    <span class="price fw-semibold">₱7,500.00</span>
                                     <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
                                 </div>
                             </div>
@@ -127,13 +132,13 @@
                     <div class="col-sm-6 col-lg-3 product-item">
                         <div class="card h-100">
                             <div class="position-relative">
-                                <img src="images/product-images/product-3.jpg" class="card-img-top"
-                                    alt="Cloud Step — Lifestyle shoe">
+                                <img src="images/product-images/anta5.png" class="card-img-top"
+                                    alt="Anta— Lifestyle shoe">
                                 <span class="badge badge-signal position-absolute top-0 start-0 m-2">Best Seller</span>
                             </div>
                             <div class="card-body d-flex flex-column">
-                                <p class="eyebrow mb-1">Lifestyle</p>
-                                <h3 class="h5 mb-1">Cloud Step</h3>
+                                <p class="eyebrow mb-1">Lifestyle · Anta</p>
+                                <h3 class="h5 mb-1">ANTA Basic Lifestyle Shoes Men</h3>
                                 <p class="text-secondary small mb-3">Everyday comfort with a soft knit upper.</p>
                                 <div class="mt-auto d-flex justify-content-between align-items-center">
                                     <span class="price fw-semibold">₱2,999.00</span>
@@ -145,16 +150,18 @@
                     <div class="col-sm-6 col-lg-3 product-item">
                         <div class="card h-100">
                             <div class="position-relative">
-                                <img src="images/product-images/product-4.jpg" class="card-img-top"
-                                    alt="Court King — Basketball shoe">
+                                <img src="images/product-images/nike3.png" class="card-img-top"
+                                    alt="Nike — Basketball shoe">
                                 <span class="badge badge-court position-absolute top-0 start-0 m-2">New</span>
                             </div>
                             <div class="card-body d-flex flex-column">
-                                <p class="eyebrow mb-1">Basketball</p>
-                                <h3 class="h5 mb-1">Court King</h3>
-                                <p class="text-secondary small mb-3">High-top support built for explosive plays.</p>
+                                <p class="eyebrow mb-1">Basketball · Nike</p>
+                                <h3 class="h5 mb-1">LeBron XXIII 'Dreams and Nightmares' EP</h3>
+                                <p class="text-secondary small mb-3">It offers peak lightweight responsiveness thanks to
+                                    springy, full-length ZoomX
+                                    foam—perfect for the high speed demands of the modern game.</p>
                                 <div class="mt-auto d-flex justify-content-between align-items-center">
-                                    <span class="price fw-semibold">₱4,299.00</span>
+                                    <span class="price fw-semibold">₱12,595</span>
                                     <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
                                 </div>
                             </div>
@@ -163,16 +170,20 @@
                     <div class="col-sm-6 col-lg-3 product-item">
                         <div class="card h-100">
                             <div class="position-relative">
-                                <img src="images/product-images/product-7.jpg" class="card-img-top"
-                                    alt="Velocity Pro — Running shoe">
+                                <img src="images/product-images/puma8.png" class="card-img-top"
+                                    alt="Puma — Training shoe">
                                 <span class="badge badge-signal position-absolute top-0 start-0 m-2">Sale</span>
                             </div>
                             <div class="card-body d-flex flex-column">
-                                <p class="eyebrow mb-1">Running</p>
-                                <h3 class="h5 mb-1">Velocity Pro</h3>
-                                <p class="text-secondary small mb-3">Carbon-plated speed built for race day.</p>
+                                <p class="eyebrow mb-1">Training · Puma</p>
+                                <h3 class="h5 mb-1">Deviate NITRO™ 3 Running Shoes Men</h3>
+                                <p class="text-secondary small mb-3">Experience unparalleled propulsion in your everyday
+                                    training runs with the Deviate NITRO™ 3,
+                                    featuring PWRPLATE technology and NITRO™ foam.
+                                    These highly responsive running shoes deliver a snappy ride, infusing speed into
+                                    every stride.</p>
                                 <div class="mt-auto d-flex justify-content-between align-items-center">
-                                    <span class="price fw-semibold">₱4,499.00</span>
+                                    <span class="price fw-semibold">₱5,280.00</span>
                                     <a href="product-details.html" class="btn btn-dark btn-sm">View Details</a>
                                 </div>
                             </div>
@@ -189,7 +200,7 @@
                 <h2 class="mb-5">Find Your Fit</h2>
                 <div class="row g-4">
                     <div class="col-sm-6 col-lg-3">
-                        <a href="products.html" class="text-decoration-none">
+                        <a href="products.html?category=running" class="text-decoration-none">
                             <div class="category-card">
                                 <img src="images/categories/category-running.jpg" alt="Running shoes">
                                 <div class="category-label"><span>Running</span></div>
@@ -197,7 +208,7 @@
                         </a>
                     </div>
                     <div class="col-sm-6 col-lg-3">
-                        <a href="products.html" class="text-decoration-none">
+                        <a href="products.html?category=basketball" class="text-decoration-none">
                             <div class="category-card">
                                 <img src="images/categories/category-basketball.jpg" alt="Basketball shoes">
                                 <div class="category-label"><span>Basketball</span></div>
@@ -205,7 +216,7 @@
                         </a>
                     </div>
                     <div class="col-sm-6 col-lg-3">
-                        <a href="products.html" class="text-decoration-none">
+                        <a href="products.html?category=lifestyle" class="text-decoration-none">
                             <div class="category-card">
                                 <img src="images/categories/category-lifestyle.jpg" alt="Lifestyle shoes">
                                 <div class="category-label"><span>Lifestyle</span></div>
@@ -213,7 +224,7 @@
                         </a>
                     </div>
                     <div class="col-sm-6 col-lg-3">
-                        <a href="products.html" class="text-decoration-none">
+                        <a href="products.html?category=training" class="text-decoration-none">
                             <div class="category-card">
                                 <img src="images/categories/category-training.jpg" alt="Training shoes">
                                 <div class="category-label"><span>Training</span></div>
@@ -286,6 +297,9 @@
 
     <!-- JS scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product-links.js"></script>
     <script src="js/script.js"></script>
 </body>
 

@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 bg-white">
     <a href="#main" class="visually-hidden-focusable">Skip to content</a>
     <nav class="navbar navbar-expand-lg navbar-stride sticky-top py-3">
         <div class="container">
@@ -42,6 +42,7 @@
                 </ul>
                 <a href="cart.html" class="btn btn-outline-dark btn-cart btn-sm ms-4">
                     <i class="bi bi-bag me-1"></i> Cart
+                    <span id="navCartCount" class="cart-count-badge"></span>
                 </a>
             </div>
         </div>
@@ -83,7 +84,7 @@
 
                 <div class="row g-5">
                     <div class="col-lg-8">
-                        <div class="table-responsive">
+                        <div class="table-responsive" id="cartTableWrap">
                             <table class="table table-cart" id="cartTable">
                                 <thead>
                                     <tr>
@@ -95,80 +96,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-price="3499">
-                                        <td>
-                                            <div class="d-flex align-items-center gap-3">
-                                                <img src="images/product-images/product-1.jpg" class="cart-thumb"
-                                                    alt="Aero Runner">
-                                                <div>
-                                                    <p class="mb-0 fw-semibold">Aero Runner</p>
-                                                    <p class="mb-0 small text-secondary mono">Size US 9</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="price">₱3,499.00</td>
-                                        <td style="max-width:110px;">
-                                            <input type="number" class="form-control form-control-sm cart-qty" value="1"
-                                                min="1" aria-label="Quantity for Aero Runner">
-                                        </td>
-                                        <td class="price cart-subtotal">₱3,499.00</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-dark cart-remove" type="button"
-                                                aria-label="Remove Aero Runner from cart">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr data-price="4299">
-                                        <td>
-                                            <div class="d-flex align-items-center gap-3">
-                                                <img src="images/product-images/product-4.jpg" class="cart-thumb"
-                                                    alt="Court King">
-                                                <div>
-                                                    <p class="mb-0 fw-semibold">Court King</p>
-                                                    <p class="mb-0 small text-secondary mono">Size US 10</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="price">₱4,299.00</td>
-                                        <td style="max-width:110px;">
-                                            <input type="number" class="form-control form-control-sm cart-qty" value="2"
-                                                min="1" aria-label="Quantity for Court King">
-                                        </td>
-                                        <td class="price cart-subtotal">₱8,598.00</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-dark cart-remove" type="button"
-                                                aria-label="Remove Court King from cart">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr data-price="2599">
-                                        <td>
-                                            <div class="d-flex align-items-center gap-3">
-                                                <img src="images/product-images/product-9.jpg" class="cart-thumb"
-                                                    alt="Weekend Walker">
-                                                <div>
-                                                    <p class="mb-0 fw-semibold">Weekend Walker</p>
-                                                    <p class="mb-0 small text-secondary mono">Size US 8</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="price">₱2,599.00</td>
-                                        <td style="max-width:110px;">
-                                            <input type="number" class="form-control form-control-sm cart-qty" value="1"
-                                                min="1" aria-label="Quantity for Weekend Walker">
-                                        </td>
-                                        <td class="price cart-subtotal">₱2,599.00</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-dark cart-remove" type="button"
-                                                aria-label="Remove Weekend Walker from cart">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    <!-- Rows are rendered by js/cart.js from the cart stored in this browser -->
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="text-center py-5 d-none" id="cartEmptyState">
+                            <i class="bi bi-bag-x fs-1 text-secondary d-block mb-3"></i>
+                            <h2 class="h5 mb-2">Your cart is empty</h2>
+                            <p class="text-secondary mb-4">Looks like you haven't added any shoes yet.</p>
+                            <a href="products.html" class="btn btn-primary">Continue Shopping</a>
                         </div>
                     </div>
 
@@ -257,6 +193,8 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/script.js"></script>
 </body>
 

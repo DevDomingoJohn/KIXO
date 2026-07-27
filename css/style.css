@@ -7,10 +7,19 @@
   --steel:  #5B6472;   /* muted text / borders            */
   --chalk:  #FFFFFF;   /* card surfaces                   */
   --fog:    #DEE0D9;   /* light neutral surface           */
+  --white:  #FFFFFF;   /* white                           */
 
   --font-display: 'Big Shoulders', sans-serif;
   --font-body: 'Work Sans', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
+
+  /*
+   * Product cards (Featured on Home + Shop grid): fixed height is customizable.
+   * Change --product-card-height to make every product card taller or shorter.
+   * Optional: --product-card-image-height sets the photo area inside each card.
+   */
+  --product-card-height: 26rem;
+  --product-card-image-height: 11.5rem;
 }
 
 /* Base */
@@ -18,6 +27,11 @@ body{
   font-family: var(--font-body);
   background-color: var(--cloud);
   color: var(--ink);
+}
+
+/* Home page only: pure white background instead of the default cloud tint */
+body.page-home{
+  background-color: var(--chalk);
 }
 
 h1,h2,h3,h4,h5,.display-font{
@@ -111,6 +125,23 @@ a:hover{ color: var(--signal); }
 .navbar-stride .btn-cart{
   border: 2px solid var(--ink);
   border-radius: 0;
+  position: relative;
+}
+.cart-count-badge{
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background-color: var(--signal);
+  color: var(--chalk);
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  line-height: 18px;
+  text-align: center;
+  display: none;
 }
 
 /* Offcanvas mobile nav */
@@ -192,6 +223,87 @@ a:hover{ color: var(--signal); }
 .card-img-top{
   aspect-ratio: 1 / 1;
   object-fit: cover;
+}
+
+/* Product grid — index.html featured + products.html shop */
+.product-item > .card{
+  height: var(--product-card-height);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.product-item > .card > .position-relative{
+  flex-shrink: 0;
+}
+.product-item .card-img-top{
+  height: var(--product-card-image-height);
+  aspect-ratio: unset;
+  width: 100%;
+  object-fit: cover;
+}
+.product-item .card-body{
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.product-item .card-body > h3{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.product-item .card-body > p.text-secondary{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+/* Product details — large image */
+#productDetailRoot .col-lg-6:first-child > div.rounded{
+  border: 3px solid var(--signal);
+}
+
+/* Product details — size picker */
+.product-size-picker{
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--fog);
+  border-radius: 4px;
+  background-color: var(--chalk);
+}
+.size-region-group .btn{
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  letter-spacing: .08em;
+  min-width: 3.25rem;
+}
+.size-option-btn{
+  min-width: 2.85rem;
+  padding: .5rem .65rem;
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  line-height: 1;
+  border: 1px solid var(--fog);
+  border-radius: 4px;
+  background-color: var(--cloud);
+  color: var(--ink);
+  transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+}
+.size-option-btn:hover{
+  border-color: var(--steel);
+  background-color: var(--chalk);
+}
+.size-option-btn.active{
+  border-color: var(--ink);
+  background-color: var(--ink);
+  color: var(--chalk);
+}
+.size-option-btn:focus-visible{
+  outline: 3px solid var(--signal);
+  outline-offset: 2px;
+}
+#sizeSelectionHint.is-warning{
+  color: var(--signal);
 }
 
 .badge-signal{ background-color: var(--signal); color: var(--chalk); }
