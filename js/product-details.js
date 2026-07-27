@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   renderProduct(product);
   initSizePicker(product);
   bindProductInteractions(product);
+  renderRelatedProducts(product);
 });
 
 var SIZE_ROWS = [
@@ -254,6 +255,66 @@ function bindProductInteractions(product) {
 function setText(id, text) {
   var el = document.getElementById(id);
   if (el) el.textContent = text;
+}
+
+function renderRelatedProducts(product) {
+  var container = document.getElementById("relatedProducts");
+  if (!container || !window.KIXO_PRODUCTS) return;
+
+  var candidateIds = Object.keys(window.KIXO_PRODUCTS).filter(function (id) {
+    return id !== product.id;
+  });
+
+  // Fisher-Yates shuffle, then take the first 3 — a fresh random pick on every visit/reload.
+  for (var i = candidateIds.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = candidateIds[i];
+    candidateIds[i] = candidateIds[j];
+    candidateIds[j] = tmp;
+  }
+
+  var picks = candidateIds.slice(0, 3).map(function (id) {
+    return window.KIXO_PRODUCTS[id];
+  });
+
+  container.innerHTML = picks
+    .map(function (p) {
+      return (
+        '<div class="col-sm-6 col-lg-4 product-item">' +
+        '<div class="card h-100">' +
+        '<div class="position-relative">' +
+        '<img src="' +
+        p.image +
+        '" class="card-img-top" alt="' +
+        escapeHtml(p.name) +
+        '">' +
+        "</div>" +
+        '<div class="card-body d-flex flex-column">' +
+        '<p class="eyebrow mb-1">' +
+        escapeHtml(p.categoryLabel) +
+        " \u00b7 " +
+        escapeHtml(p.brandLabel) +
+        "</p>" +
+        '<h3 class="h5 mb-1">' +
+        escapeHtml(p.name) +
+        "</h3>" +
+        '<p class="text-secondary small mb-3">' +
+        escapeHtml(p.summary) +
+        "</p>" +
+        '<div class="mt-auto d-flex justify-content-between align-items-center">' +
+        '<span class="price fw-semibold">' +
+        escapeHtml(p.priceDisplay) +
+        "</span>" +
+        '<a href="product-details.html?id=' +
+        encodeURIComponent(p.id) +
+        '" class="btn btn-dark btn-sm">View Details</a>' +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>"
+      );
+    })
+    .join("");
 }
 
 function escapeHtml(str) {
