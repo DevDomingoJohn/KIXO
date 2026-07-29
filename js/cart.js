@@ -103,6 +103,13 @@
     return cart;
   }
 
+  // Empties the cart entirely (used after a checkout is placed).
+  function clearCart() {
+    saveCart([]);
+    updateNavBadge();
+    return [];
+  }
+
   function getCartCount() {
     return loadCart().reduce(function (sum, row) {
       return sum + row.qty;
@@ -279,6 +286,7 @@
     add: addToCart,
     remove: removeFromCart,
     updateQty: updateQty,
+    clear: clearCart,
     count: getCartCount,
     formatPeso: formatPeso,
     updateNavBadge: updateNavBadge,

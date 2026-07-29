@@ -288,9 +288,13 @@
 
     padding:1.8rem;
 
-    border:none;
+    background:var(--white);
+
+    border:1px solid var(--fog);
 
     border-radius:18px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.05);
 
     transition:all .35s ease;
 
@@ -303,6 +307,8 @@
 .team-card:hover{
 
     transform:translateY(-8px);
+
+    border-color:var(--signal);
 
     box-shadow:0 18px 35px rgba(0,0,0,.08);
 
@@ -334,7 +340,13 @@
 
 .leader-card{
 
+    background:var(--white);
+
+    border:1px solid var(--fog);
+
     border-top:5px solid var(--signal);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
 
     transform:scale(1.02);
 
